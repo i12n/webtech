@@ -20,3 +20,17 @@ const add = num1 => num2 => num1 + num2;
 one(add(two())); // 3
 two(add(one())); // 3
 ```
+
+也可以如下：
+
+```js
+const number = num => fn => typeof fn === 'function' ? fn(num) : num;
+const add = num1 => num2 => num1 + num2;
+
+const one = number(1);
+const two = number(2);
+
+
+one(add(two())); // 3
+two(add(one())); // 3
+```
