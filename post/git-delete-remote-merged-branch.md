@@ -11,5 +11,10 @@
   xargs git push origin --delete
 ```
 
+
+```
+git branch -r | awk -F/ '/\/feature/{print $2"/"$3}' | xargs -I {} git push origin :{}
+```
+
 # 参考
 - [https://gist.github.com/schacon/942899](https://gist.github.com/schacon/942899)
